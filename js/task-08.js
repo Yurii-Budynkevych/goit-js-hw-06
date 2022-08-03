@@ -8,7 +8,7 @@ function onSubmit(eve) {
   if (email.value === "" || password.value === "") {
     return alert("Please fill in all the fields!");
   }
-  const formData = new FormData(eve.currentTarget);
+  const formData = { email: email.value, password: password.value };
   console.log(formData);
   this.reset();
 }

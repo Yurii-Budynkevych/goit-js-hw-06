@@ -13,10 +13,10 @@ const images = [
   },
 ];
 const galleryEl = document.querySelector(".gallery");
-const elements = images.map((image) => {
-  const liEl = document.createElement("li");
-  liEl.innerHTML = `<img url='${image.url}' alt='${image.alt}' />`;
-  return liEl;
-});
-console.log(elements[0]);
-galleryEl.append(...elements);
+const elements = images
+  .map((image) => {
+    return `<li><img src='${image.url}' alt='${image.alt}' width=200px /></li>`;
+  })
+  .join("");
+galleryEl.insertAdjacentHTML("afterbegin", elements);
+galleryEl.style.display = "flex";
